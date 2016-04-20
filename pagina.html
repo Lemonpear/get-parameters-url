@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        #dato {
+            font-size: 60px;
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>PAGINA QUE RECIBE EL DATO</h1>
+    <span id="dato"></span>
+    
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        var foo = getParameterByName('foo');
+        document.getElementById("dato").innerHTML = foo;
+    </script>
+</body>
+
+</html>
