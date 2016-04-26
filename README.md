@@ -1,2 +1,2 @@
-# get-parameters-url
-get parameters url
+# get-url-parameters
+get url parameters 
